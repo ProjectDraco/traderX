@@ -159,8 +159,7 @@ class TraderXItemFactory
       ItemBase newItem = TryCreateInInventoryHierarchy(player, className, quantity, healthLevel);
       if(newItem)
       {
-          GetTraderXLogger().LogDebug(string.Format("[STACKING] Successfully created new item: %1 x%2 (amount: %3)", 
-              className, quantity.ToString(), TraderXQuantityManager.GetItemAmount(newItem).ToString()));
+          GetTraderXLogger().LogDebug(string.Format("[STACKING] Successfully created new item: %1 x%2 (amount: %3)", className, quantity.ToString(), TraderXQuantityManager.GetItemAmount(newItem).ToString()));
           return newItem;
       }
       

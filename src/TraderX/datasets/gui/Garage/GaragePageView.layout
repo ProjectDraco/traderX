@@ -1,0 +1,730 @@
+FrameWidgetClass rootFrame {
+ position 0 0
+ size 1 1
+ halign center_ref
+ valign center_ref
+ hexactpos 0
+ vexactpos 0
+ hexactsize 0
+ vexactsize 0
+ {
+  PanelWidgetClass garageRoot {
+   color 0.9961 0.9961 0.9961 1
+   position 0 0
+   size 0.6 0.7
+   halign center_ref
+   valign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   style TXContainer
+   {
+    PanelWidgetClass headerBar {
+     ignorepointer 1
+     color 0.9961 0.9961 0.9961 1
+     position 0 0
+     size 1 0.08
+     hexactpos 0
+     vexactpos 0
+     hexactsize 0
+     vexactsize 0
+     style TXHeader
+     {
+      TextWidgetClass headerTitle {
+       ignorepointer 1
+       position 0.02 0
+       size 0.2 1
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       text "GARAGE"
+       font "gui"
+       "text color" 0.8784 0.8784 0.8784 1
+       "exact text" 1
+       "text valign" center
+      }
+      PanelWidgetClass balancePanel {
+       ignorepointer 1
+       position 0.5 0
+       size 0.35 1
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       {
+        TextWidgetClass balanceLabel {
+         ignorepointer 1
+         position 0 0
+         size 0.3 1
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         text "BALANCE"
+         font "gui"
+         "text color" 0.3333 0.3333 0.3333 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+        TextWidgetClass balanceValue {
+         ignorepointer 1
+         position 0.32 0
+         size 0.45 1
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "TextBinding"
+         text "0"
+         font "gui"
+         "text color" 0.7882 0.1882 0.1725 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+        TextWidgetClass balanceCurrency {
+         ignorepointer 1
+         position 0.78 0
+         size 0.2 1
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         text "TC"
+         font "gui"
+         "text color" 0.5333 0.5333 0.5333 1
+         "exact text" 1
+         "text halign" left
+         "text valign" center
+        }
+       }
+      }
+      ButtonWidgetClass leaveBtn {
+       position 0.87 0.1
+       size 0.11 0.8
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       scriptclass "ButtonBinding"
+       style TXBtnLeave
+       text "LEAVE"
+       font "gui"
+       "text color" 1 1 1 1
+      }
+     }
+    }
+    PanelWidgetClass headerDivider {
+     ignorepointer 1
+     color 0.9961 0.9961 0.9961 1
+     position 0 0.08
+     size 1 0
+     hexactpos 0
+     vexactpos 0
+     hexactsize 0
+     vexactsize 0
+     style TXDivider
+    }
+    PanelWidgetClass mainContent {
+     ignorepointer 1
+     position 0 0.09
+     size 1 0.91
+     hexactpos 0
+     vexactpos 0
+     hexactsize 0
+     vexactsize 0
+     {
+      PanelWidgetClass vehicleListPanel {
+       ignorepointer 1
+       color 0.9961 0.9961 0.9961 1
+       position 0 0
+       size 0.4 1
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style TXSidebar
+       {
+        PanelWidgetClass listHeader {
+         ignorepointer 1
+         position 0 0
+         size 1 0.07
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         {
+          TextWidgetClass listHeaderLabel {
+           ignorepointer 1
+           position 0.65 0
+           size 0.3 1
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "TextBinding"
+           text "0/5"
+           font "gui"
+           "text color" 0.3333 0.3333 0.3333 1
+           "exact text" 1
+           "text halign" right
+           "text valign" center
+          }
+         }
+        }
+        PanelWidgetClass listDivider {
+         ignorepointer 1
+         color 0.9961 0.9961 0.9961 1
+         position 0 0.07
+         size 1 0
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         style TXDivider
+        }
+        ScrollWidgetClass vehicleListScroll {
+         ignorepointer 1
+         position 0 0.08
+         size 1 0.91
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         "Scrollbar V" 1
+         {
+          GridSpacerWidgetClass vehicleListGrid {
+           ignorepointer 1
+           position 0 0
+           size 1 48
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ComponentWidgetBinding"
+           Padding 1
+           Margin 8
+           "Size To Content V" 1
+           Columns 1
+           Rows 100
+           {
+            ButtonWidgetClass vehicleRowBtn {
+             color 0.9961 0.9961 0.9961 1
+             position 0 0
+             size 1 48
+             hexactpos 0
+             vexactpos 0
+             hexactsize 0
+             vexactsize 1
+             scriptclass "ButtonBinding"
+             style TXListRow
+             "text color" 0.9961 0.9961 0.9961 1
+             {
+              PanelWidgetClass vehicleRowContent {
+               ignorepointer 1
+               color 0.9961 0.9961 0.9961 1
+               position 0 0
+               size 1 1
+               halign center_ref
+               valign center_ref
+               hexactpos 0
+               vexactpos 0
+               hexactsize 0
+               vexactsize 0
+               style blank
+               {
+                PanelWidgetClass healthIndicator {
+                 ignorepointer 1
+                 color 0.4157 0.6039 0.4157 1
+                 position 0 0.1
+                 size 0.01 0.8
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 style rover_sim_colorable
+                }
+                TextWidgetClass vehicleName {
+                 ignorepointer 1
+                 position 0.04 0
+                 size 0.65 0.6
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 scriptclass "TextBinding"
+                 text "OffroadHatchback"
+                 font "gui"
+                 "text color" 0.7529 0.7529 0.7529 1
+                 "exact text" 1
+                 "text halign" left
+                 "text valign" center
+                }
+                TextWidgetClass vehicleHealth {
+                 ignorepointer 1
+                 position 0.04 0.55
+                 size 0.65 0.4
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 scriptclass "TextBinding"
+                 text "Pristine"
+                 font "gui"
+                 "text color" 0.3333 0.3333 0.3333 1
+                 "exact text" 1
+                 "text halign" left
+                 "text valign" center
+                }
+                PanelWidgetClass blockingBadge {
+                 visible 0
+                 ignorepointer 1
+                 color 0.9961 0.9961 0.9961 1
+                 position 0.75 0.2
+                 size 0.22 0.6
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 style TXBadge
+                 {
+                  TextWidgetClass blockingText {
+                   ignorepointer 1
+                   position 0 0
+                   size 1 1
+                   hexactpos 0
+                   vexactpos 0
+                   hexactsize 0
+                   vexactsize 0
+                   text "IN"
+                   font "gui"
+                   "text color" 0.7882 0.1882 0.1725 1
+                   "exact text" 1
+                   "text halign" center
+                   "text valign" center
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+            ButtonWidgetClass vehicleRowBtn0 {
+             color 0.9961 0.9961 0.9961 1
+             position 0 0
+             size 1 48
+             hexactpos 0
+             vexactpos 0
+             hexactsize 0
+             vexactsize 1
+             scriptclass "ButtonBinding"
+             style TXListRow
+             "text color" 0.9961 0.9961 0.9961 1
+             {
+              PanelWidgetClass vehicleRowContent0 {
+               ignorepointer 1
+               color 0.9961 0.9961 0.9961 1
+               position 0 0
+               size 1 1
+               halign center_ref
+               valign center_ref
+               hexactpos 0
+               vexactpos 0
+               hexactsize 0
+               vexactsize 0
+               style blank
+               {
+                PanelWidgetClass healthIndicator0 {
+                 ignorepointer 1
+                 color 0.4157 0.6039 0.4157 1
+                 position 0 0.1
+                 size 0.01 0.8
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 style rover_sim_colorable
+                }
+                TextWidgetClass vehicleName0 {
+                 ignorepointer 1
+                 position 0.04 0
+                 size 0.65 0.6
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 scriptclass "TextBinding"
+                 text "OffroadHatchback"
+                 font "gui"
+                 "text color" 0.7529 0.7529 0.7529 1
+                 "exact text" 1
+                 "text halign" left
+                 "text valign" center
+                }
+                TextWidgetClass vehicleHealth0 {
+                 ignorepointer 1
+                 position 0.04 0.55
+                 size 0.65 0.4
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 scriptclass "TextBinding"
+                 text "Pristine"
+                 font "gui"
+                 "text color" 0.3333 0.3333 0.3333 1
+                 "exact text" 1
+                 "text halign" left
+                 "text valign" center
+                }
+                PanelWidgetClass blockingBadge0 {
+                 visible 0
+                 ignorepointer 1
+                 color 0.9961 0.9961 0.9961 1
+                 position 0.75 0.2
+                 size 0.22 0.6
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 style TXBadge
+                 {
+                  TextWidgetClass blockingText0 {
+                   ignorepointer 1
+                   position 0 0
+                   size 1 1
+                   hexactpos 0
+                   vexactpos 0
+                   hexactsize 0
+                   vexactsize 0
+                   text "IN"
+                   font "gui"
+                   "text color" 0.7882 0.1882 0.1725 1
+                   "exact text" 1
+                   "text halign" center
+                   "text valign" center
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+            ButtonWidgetClass vehicleRowBtn1 {
+             color 0.9961 0.9961 0.9961 1
+             position 0 0
+             size 1 48
+             hexactpos 0
+             vexactpos 0
+             hexactsize 0
+             vexactsize 1
+             scriptclass "ButtonBinding"
+             style TXListRow
+             "text color" 0.9961 0.9961 0.9961 1
+             {
+              PanelWidgetClass vehicleRowContent1 {
+               ignorepointer 1
+               color 0.9961 0.9961 0.9961 1
+               position 0 0
+               size 1 1
+               halign center_ref
+               valign center_ref
+               hexactpos 0
+               vexactpos 0
+               hexactsize 0
+               vexactsize 0
+               style blank
+               {
+                PanelWidgetClass healthIndicator1 {
+                 ignorepointer 1
+                 color 0.4157 0.6039 0.4157 1
+                 position 0 0.1
+                 size 0.01 0.8
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 style rover_sim_colorable
+                }
+                TextWidgetClass vehicleName1 {
+                 ignorepointer 1
+                 position 0.04 0
+                 size 0.65 0.6
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 scriptclass "TextBinding"
+                 text "OffroadHatchback"
+                 font "gui"
+                 "text color" 0.7529 0.7529 0.7529 1
+                 "exact text" 1
+                 "text halign" left
+                 "text valign" center
+                }
+                TextWidgetClass vehicleHealth1 {
+                 ignorepointer 1
+                 position 0.04 0.55
+                 size 0.65 0.4
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 scriptclass "TextBinding"
+                 text "Pristine"
+                 font "gui"
+                 "text color" 0.3333 0.3333 0.3333 1
+                 "exact text" 1
+                 "text halign" left
+                 "text valign" center
+                }
+                PanelWidgetClass blockingBadge1 {
+                 visible 0
+                 ignorepointer 1
+                 color 0.9961 0.9961 0.9961 1
+                 position 0.75 0.2
+                 size 0.22 0.6
+                 hexactpos 0
+                 vexactpos 0
+                 hexactsize 0
+                 vexactsize 0
+                 style TXBadge
+                 {
+                  TextWidgetClass blockingText1 {
+                   ignorepointer 1
+                   position 0 0
+                   size 1 1
+                   hexactpos 0
+                   vexactpos 0
+                   hexactsize 0
+                   vexactsize 0
+                   text "IN"
+                   font "gui"
+                   "text color" 0.7882 0.1882 0.1725 1
+                   "exact text" 1
+                   "text halign" center
+                   "text valign" center
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+      PanelWidgetClass detailPanel {
+       ignorepointer 1
+       position 0.4 0
+       size 0.6 1
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       {
+        PanelWidgetClass vehiclePreviewSection {
+         ignorepointer 1
+         color 0.9961 0.9961 0.9961 1
+         position 0.02 0.02
+         size 0.96 0.5
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         style TXPreviewPanel
+         {
+          TextWidgetClass previewTitle {
+           ignorepointer 1
+           position 0.03 0.03
+           size 0.94 0.08
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "TextBinding"
+           text "Select"
+           font "gui"
+           "text color" 0.8784 0.8784 0.8784 1
+           "exact text" 1
+           "text halign" left
+           "text valign" center
+          }
+          PanelWidgetClass previewDivider {
+           ignorepointer 1
+           color 0.9961 0.9961 0.9961 1
+           position 0.03 0.12
+           size 0.94 0
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           style TXDivider
+          }
+          ItemPreviewWidgetClass vehiclePreview {
+           ignorepointer 1
+           position 0 0.14
+           size 1 0.86
+           halign center_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "ItemPreviewBinding"
+          }
+         }
+        }
+        PanelWidgetClass parkingStatusSection {
+         ignorepointer 1
+         position 0.02 0.54
+         size 0.96 0.1
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         {
+          PanelWidgetClass parkingIndicator {
+           ignorepointer 1
+           color 0.9961 0.9961 0.9961 1
+           position 0.01 0
+           size 0.03 0.27
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           style TXParkingAvailable
+          }
+          TextWidgetClass parkingStatusLabel {
+           ignorepointer 1
+           position 0.06 0
+           size 0.4 0.5
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "TextBinding"
+           text "Available"
+           font "gui"
+           "text color" 0.4157 0.6039 0.4157 1
+           "exact text" 1
+           "text halign" left
+           "text valign" center
+          }
+          PanelWidgetClass costPanel {
+           ignorepointer 1
+           position 0.5 0
+           size 0.5 1
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           {
+            TextWidgetClass parkInCostLabel {
+             ignorepointer 1
+             position 0.57 0
+             size 0.4 0.5
+             hexactpos 0
+             vexactpos 0
+             hexactsize 0
+             vexactsize 0
+             scriptclass "TextBinding"
+             text "100"
+             font "gui"
+             "text color" 0.7882 0.1882 0.1725 1
+             "exact text" 1
+             "text halign" left
+             "text valign" center
+            }
+            TextWidgetClass parkOutCostLabel {
+             ignorepointer 1
+             position 0.57 0.5
+             size 0.4 0.5
+             hexactpos 0
+             vexactpos 0
+             hexactsize 0
+             vexactsize 0
+             scriptclass "TextBinding"
+             text "100"
+             font "gui"
+             "text color" 0.7882 0.1882 0.1725 1
+             "exact text" 1
+             "text halign" left
+             "text valign" center
+            }
+           }
+          }
+         }
+        }
+        GridSpacerWidgetClass actionGrid {
+         position 0.02 0.66
+         size 0.96 0.12
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         Margin 8
+         Columns 2
+         Rows 1
+         {
+          ButtonWidgetClass parkInBtn {
+           color 0.9961 0.9961 0.9961 1
+           style TXBtnPrimary
+           text "PARK"
+           font "gui"
+           "text color" 0.4157 0.6039 0.4157 1
+          }
+          ButtonWidgetClass parkOutBtn {
+           color 0.9961 0.9961 0.9961 1
+           style TXBtnDanger
+           text "PARK"
+           font "gui"
+           "text color" 0.7882 0.1882 0.1725 1
+          }
+         }
+        }
+        PanelWidgetClass garageStatusPanel {
+         visible 0
+         ignorepointer 1
+         color 0.9961 0.9961 0.9961 1
+         position 0.02 0.8
+         size 0.96 0.08
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         style TXInfoBox
+         {
+          RichTextWidgetClass garageStatusMessage {
+           ignorepointer 1
+           position 0.03 0
+           size 0.94 1
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "TextBinding"
+           font "gui"
+           "text color" 0.7882 0.1882 0.1725 1
+           "exact text" 1
+           "text valign" center
+           wrap 1
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -9,7 +9,7 @@ class TraderXTransactionResult
     //TODO: remove finish this
     ref TraderXTransactionId transactionId;
     string productId;
-    TraderXTransactionType transactionType;
+    ref TraderXTransactionType transactionType;
     ETraderXTransactionResultType resultType;
     string message;
     

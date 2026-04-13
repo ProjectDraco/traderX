@@ -37,6 +37,7 @@ GameProjectClass {
 				"TraderX/datasets/images/notification_ui.imageset"
 				"TraderX/datasets/traderplus_ui.imageset"
 				"TraderX/datasets/icons/icons.imageset"
+				"TraderX/datasets/styles/traderx_ui.imageset"
 			}
 			widgetStyles {
 				"gui/looknfeel/dayzwidgets.styles" 
@@ -44,6 +45,7 @@ GameProjectClass {
 				"DabsFramework/gui/looknfeel/prefabs.styles"
 				"TraderX_GUI/gui/Styles.styles"
 				"TraderX/datasets/Styles.styles"
+				"TraderX/datasets/styles/traderx_styles.styles"
 			}
 			ScriptModules {
 				ScriptModulePathClass {

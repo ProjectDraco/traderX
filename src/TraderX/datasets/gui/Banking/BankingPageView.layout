@@ -1,0 +1,646 @@
+FrameWidgetClass rootFrame {
+ position 0 0
+ size 1 1
+ halign center_ref
+ valign center_ref
+ hexactpos 0
+ vexactpos 0
+ hexactsize 0
+ vexactsize 0
+ {
+  PanelWidgetClass bankingRoot {
+   color 0.9961 0.9961 0.9961 1
+   position 0 0
+   size 0.5 0.7
+   halign center_ref
+   valign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   style TXContainer
+   {
+    PanelWidgetClass headerBar {
+     ignorepointer 1
+     color 0.9961 0.9961 0.9961 1
+     position 0 0
+     size 1 0.08
+     hexactpos 0
+     vexactpos 0
+     hexactsize 0
+     vexactsize 0
+     style TXHeader
+     {
+      TextWidgetClass headerTitle {
+       ignorepointer 1
+       position 0.02 0
+       size 0.2 1
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       text "BANK"
+       font "gui"
+       "text color" 0.8784 0.8784 0.8784 1
+       "exact text" 1
+       "text valign" center
+      }
+      PanelWidgetClass balancePanel {
+       ignorepointer 1
+       position 0.6 0
+       size 0.38 1
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       {
+        TextWidgetClass balanceLabel {
+         ignorepointer 1
+         position 0 0
+         size 0.3 1
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         text "BALANCE"
+         font "gui"
+         "text color" 0.3333 0.3333 0.3333 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+        TextWidgetClass balanceValue {
+         ignorepointer 1
+         position 0.32 0
+         size 0.45 1
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "TextBinding"
+         text "0"
+         font "gui"
+         "text color" 0.7882 0.1882 0.1725 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+        TextWidgetClass balanceCurrency {
+         ignorepointer 1
+         position 0.78 0
+         size 0.2 1
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         text "TC"
+         font "gui"
+         "text color" 0.5333 0.5333 0.5333 1
+         "exact text" 1
+         "text halign" left
+         "text valign" center
+        }
+       }
+      }
+     }
+    }
+    GridSpacerWidgetClass tabNavGrid {
+     ignorepointer 1
+     position 0 0.08
+     size 1 0.06
+     hexactpos 0
+     vexactpos 0
+     hexactsize 0
+     vexactsize 0
+     Columns 3
+     Rows 1
+     {
+      ButtonWidgetClass tabAccount {
+       color 0.9961 0.9961 0.9961 1
+       scriptclass "ButtonBinding"
+       style TXTabActive
+       text "ACCOUNT"
+       font "gui"
+       "text color" 0.8784 0.8784 0.8784 1
+      }
+      ButtonWidgetClass tabTransfer {
+       color 0.9961 0.9961 0.9961 1
+       scriptclass "ButtonBinding"
+       style TXTabInactive
+       text "TRANSFER"
+       font "gui"
+       "text color" 0.4 0.4 0.4 1
+      }
+      ButtonWidgetClass tabLeave {
+       color 0.9961 0.9961 0.9961 1
+       scriptclass "ButtonBinding"
+       style TXBtnLeave
+       text "LEAVE"
+       font "gui"
+       "text color" 1 1 1 1
+      }
+     }
+    }
+    PanelWidgetClass tabDivider {
+     ignorepointer 1
+     color 0.9961 0.9961 0.9961 1
+     position 0 0.14
+     size 1 0
+     hexactpos 0
+     vexactpos 0
+     hexactsize 0
+     vexactsize 0
+     style TXDivider
+    }
+    PanelWidgetClass accountPanel {
+     ignorepointer 1
+     position 0 0.15
+     size 1 0.85
+     hexactpos 0
+     vexactpos 0
+     hexactsize 0
+     vexactsize 0
+     {
+      PanelWidgetClass bankAmountSection {
+       ignorepointer 1
+       color 0.9961 0.9961 0.9961 1
+       position 0.03 0.03
+       size 0.94 0.18
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style TXCard
+       {
+        TextWidgetClass bankAmountLabel {
+         ignorepointer 1
+         position 0.35 0.08
+         size 0.62 0.35
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "TextBinding"
+         text "0"
+         font "gui"
+         "text color" 0.8784 0.8784 0.8784 1
+         "exact text" 1
+         "text halign" left
+         "text valign" center
+        }
+        TextWidgetClass playerAmountLabel {
+         ignorepointer 1
+         position 0.35 0.48
+         size 0.62 0.35
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "TextBinding"
+         text "0"
+         font "gui"
+         "text color" 0.7529 0.7529 0.7529 1
+         "exact text" 1
+         "text halign" left
+         "text valign" center
+        }
+       }
+      }
+      PanelWidgetClass transactionSection {
+       ignorepointer 1
+       color 0.9961 0.9961 0.9961 1
+       position 0.03 0.23
+       size 0.94 0.22
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style TXCard
+       {
+        TextWidgetClass transactionLabel {
+         ignorepointer 1
+         position 0.03 0.08
+         size 0.3 0.3
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         text "AMOUNT"
+         font "gui"
+         "text color" 0.3333 0.3333 0.3333 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+        EditBoxWidgetClass transactionAmountInput {
+         color 0.9961 0.9961 0.9961 1
+         position 0.35 0.08
+         size 0.5 0.3
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "EditBoxBinding"
+         style Default
+         "exact text" 1
+         font "gui"
+        }
+        TextWidgetClass feesLabel {
+         ignorepointer 1
+         position 0.03 0.5
+         size 0.3 0.3
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         text "FEES"
+         font "gui"
+         "text color" 0.3333 0.3333 0.3333 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+        TextWidgetClass feesValue {
+         ignorepointer 1
+         position 0.35 0.5
+         size 0.5 0.3
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "TextBinding"
+         text "5%"
+         font "gui"
+         "text color" 0.5333 0.5333 0.5333 1
+         "exact text" 1
+         "text halign" left
+         "text valign" center
+        }
+       }
+      }
+      GridSpacerWidgetClass actionButtonGrid {
+       position 0.03 0.47
+       size 0.94 0.1
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       Margin 8
+       Columns 2
+       Rows 1
+       {
+        ButtonWidgetClass depositBtn {
+         color 0.9961 0.9961 0.9961 1
+         scriptclass "ButtonBinding"
+         style TXBtnPrimary
+         text "DEPOSIT"
+         font "gui"
+         "text color" 0.4157 0.6039 0.4157 1
+        }
+        ButtonWidgetClass withdrawBtn {
+         color 0.9961 0.9961 0.9961 1
+         scriptclass "ButtonBinding"
+         style TXBtnDanger
+         text "WITHDRAW"
+         font "gui"
+         "text color" 0.7882 0.1882 0.1725 1
+        }
+       }
+      }
+      PanelWidgetClass progressSection {
+       ignorepointer 1
+       position 0.03 0.59
+       size 0.94 0.08
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       {
+        PanelWidgetClass progressBg {
+         ignorepointer 1
+         color 0.9961 0.9961 0.9961 1
+         position 0 0.3
+         size 1 0.4
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         style TXProgressBg
+         {
+          PanelWidgetClass progressFill {
+           ignorepointer 1
+           color 0.9961 0.9961 0.9961 1
+           position 0 0
+           size 0.5 1
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           style TXProgressFill
+          }
+         }
+        }
+        TextWidgetClass maxLabel {
+         ignorepointer 1
+         position 0 0
+         size 1 0.25
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         text "MAX"
+         font "gui"
+         "text color" 0.3333 0.3333 0.3333 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+        TextWidgetClass maxValue {
+         ignorepointer 1
+         position 0 0.75
+         size 1 0.25
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "TextBinding"
+         text "1,000,000"
+         font "gui"
+         "text color" 0.3333 0.3333 0.3333 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+       }
+      }
+      PanelWidgetClass accountIdSection {
+       ignorepointer 1
+       color 0.9961 0.9961 0.9961 1
+       position 0.03 0.7
+       size 0.94 0.12
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style TXCard
+       {
+        TextWidgetClass accountIdLabel {
+         ignorepointer 1
+         color 0.9961 0.9961 0.9961 1
+         position 0.25 0.15
+         size 0.48 0.7
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         style Normal
+         text "ACCOUNT"
+         font "gui"
+         "text color" 0.3333 0.3333 0.3333 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+         {
+          TextWidgetClass accountIdValue {
+           ignorepointer 1
+           position 0.03 0
+           size 0.94 1
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "TextBinding"
+           text "76561198000000000"
+           font "gui"
+           "text color" 0.5333 0.5333 0.5333 1
+           "exact text" 1
+           "text halign" center
+           "text valign" center
+          }
+         }
+        }
+        ButtonWidgetClass copyIdBtn {
+         color 0.9961 0.9961 0.9961 1
+         position 0.75 0.15
+         size 0.22 0.7
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         style TXBtnDefault
+         text "COPY"
+         font "gui"
+         "text color" 0.5333 0.5333 0.5333 1
+        }
+       }
+      }
+      PanelWidgetClass statusPanel {
+       visible 0
+       ignorepointer 1
+       color 0.9961 0.9961 0.9961 1
+       position 0.03 0.84
+       size 0.94 0.08
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style TXInfoBox
+       {
+        RichTextWidgetClass statusMessage {
+         ignorepointer 1
+         position 0.03 0
+         size 0.94 1
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "TextBinding"
+         font "gui"
+         "text color" 0.7882 0.1882 0.1725 1
+         "exact text" 1
+         "text valign" center
+         wrap 1
+        }
+       }
+      }
+     }
+    }
+    PanelWidgetClass transferPanel {
+     visible 0
+     ignorepointer 1
+     position 0 0.15
+     size 1 0.85
+     hexactpos 0
+     vexactpos 0
+     hexactsize 0
+     vexactsize 0
+     {
+      PanelWidgetClass transferBalanceSection {
+       ignorepointer 1
+       color 0.9961 0.9961 0.9961 1
+       position 0.03 0.03
+       size 0.94 0.14
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style TXCard
+       {
+        TextWidgetClass transferBankLabel {
+         ignorepointer 1
+         position 0.35 0
+         size 0.62 1
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "TextBinding"
+         text "0"
+         font "gui"
+         "text color" 0.8784 0.8784 0.8784 1
+         "exact text" 1
+         "text halign" left
+         "text valign" center
+        }
+       }
+      }
+      PanelWidgetClass transferAmountSection {
+       ignorepointer 1
+       color 0.9961 0.9961 0.9961 1
+       position 0.03 0.19
+       size 0.94 0.16
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style TXCard
+       {
+        TextWidgetClass transferAmountLabel {
+         ignorepointer 1
+         color 0.9961 0.9961 0.9961 1
+         position 0.35 0.1
+         size 0.5 0.35
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "EditBoxBinding"
+         style Normal
+         text "TRANSFER"
+         font "gui"
+         "text color" 0.3333 0.3333 0.3333 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+        TextWidgetClass transferFeesLabel {
+         ignorepointer 1
+         position 0.03 0.55
+         size 0.3 0.35
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         text "FEES"
+         font "gui"
+         "text color" 0.3333 0.3333 0.3333 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+        TextWidgetClass transferFeesValue {
+         ignorepointer 1
+         position 0.35 0.55
+         size 0.5 0.35
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "TextBinding"
+         text "5%"
+         font "gui"
+         "text color" 0.5333 0.5333 0.5333 1
+         "exact text" 1
+         "text halign" left
+         "text valign" center
+        }
+       }
+      }
+      PanelWidgetClass transferDestSection {
+       ignorepointer 1
+       color 0.9961 0.9961 0.9961 1
+       position 0.03 0.37
+       size 0.94 0.16
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style TXCard
+       {
+        TextWidgetClass transferDestLabel {
+         ignorepointer 1
+         color 0.9961 0.9961 0.9961 1
+         position 0.35 0.15
+         size 0.62 0.7
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "EditBoxBinding"
+         style Normal
+         text "DESTINATION"
+         font "gui"
+         "text color" 0.3333 0.3333 0.3333 1
+         "exact text" 1
+         "text halign" right
+         "text valign" center
+        }
+       }
+      }
+      ButtonWidgetClass transferBtn {
+       position 0.03 0.55
+       size 0.94 0.1
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style TXBtnDanger
+       text "SEND"
+       font "gui"
+       "text color" 0.7882 0.1882 0.1725 1
+      }
+      PanelWidgetClass transferStatusPanel {
+       visible 0
+       ignorepointer 1
+       color 0.9961 0.9961 0.9961 1
+       position 0.03 0.67
+       size 0.94 0.08
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style TXInfoBox
+       {
+        RichTextWidgetClass transferStatusMessage {
+         ignorepointer 1
+         position 0.03 0
+         size 0.94 1
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         scriptclass "TextBinding"
+         font "gui"
+         "text color" 0.7882 0.1882 0.1725 1
+         "exact text" 1
+         "text valign" center
+         wrap 1
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
